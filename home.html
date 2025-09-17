@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Morning Broadcast</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0f172a;         /* slate-900 */
+      --card:#111827;       /* gray-900 */
+      --ink:#e5e7eb;        /* gray-200 */
+      --accent:#60a5fa;     /* blue-400 */
+      --accent-2:#34d399;   /* emerald-400 */
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, #1e293b 0%, var(--bg) 60%), var(--bg);
+      color:var(--ink); display:flex; align-items:center; justify-content:center; padding:24px;
+    }
+    .wrap{
+      width:min(960px, 100%); text-align:center;
+    }
+    header{
+      background:linear-gradient(135deg, rgba(96,165,250,.15), rgba(52,211,153,.15));
+      border:1px solid rgba(148,163,184,.18);
+      padding:28px 22px; border-radius:var(--radius);
+      backdrop-filter: blur(6px);
+    }
+    h1{margin:0 0 6px; font-size:clamp(26px, 4vw, 36px)}
+    p.sub{margin:0; opacity:.85}
+    .grid{
+      margin-top:22px; display:grid; gap:14px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (max-width:780px){ .grid{grid-template-columns:1fr 1fr;}}
+    @media (max-width:460px){ .grid{grid-template-columns:1fr;}}
+    a.day{
+      display:block; text-decoration:none; color:var(--ink);
+      background:linear-gradient(180deg, #0b1220, var(--card));
+      border:1px solid rgba(148,163,184,.18);
+      padding:18px; border-radius:var(--radius);
+      font-weight:700; letter-spacing:.3px;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    a.day span{display:block; font-size:13px; opacity:.8; font-weight:500}
+    a.day:hover{ transform: translateY(-2px); border-color: rgba(96,165,250,.45);
+      box-shadow: 0 8px 24px rgba(2,6,23,.45);}
+    footer{margin-top:18px; font-size:12px; opacity:.7}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header role="banner" aria-label="Morning Broadcast">
+      <h1>Morning Broadcast</h1>
+      <p class="sub">Watch the daily announcements. Choose a day below.</p>
+    </header>
+
+    <nav class="grid" aria-label="Weekday links">
+      <a class="day" href="monday.html" aria-label="Monday broadcast">MON <span>Monday</span></a>
+      <a class="day" href="tuesday.html" aria-label="Tuesday broadcast">TUE <span>Tuesday</span></a>
+      <a class="day" href="wednesday.html" aria-label="Wednesday broadcast">WED <span>Wednesday</span></a>
+      <a class="day" href="thursday.html" aria-label="Thursday broadcast">THU <span>Thursday</span></a>
+      <a class="day" href="friday.html" aria-label="Friday broadcast">FRI <span>Friday</span></a>
+    </nav>
+
+    <footer>© <span id="y">2025</span> School Broadcast Team</footer>
+  </main>
+</body>
+</html>
